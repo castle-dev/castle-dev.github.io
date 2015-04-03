@@ -1,7 +1,7 @@
 # Site settings
 title: 'castle-dev' # Your Title
 tagline: 'we take the work out of being a landlord' # A brief tagline for your site
-sidebar_image: /images/logo-black.png
+sidebar_image: /images/logo-solo.png
 
 # Build settings
 markdown: redcarpet
