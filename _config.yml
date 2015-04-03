@@ -1,9 +1,8 @@
 # Site settings
-title: 'Strange Case' # Your Title
-tagline: 'Twisted tales to make you shudder' # A brief tagline for your site
-sidebar_image: /images/cover.jpg
+title: 'castle-dev' # Your Title
+tagline: 'we take the work out of being a landlord' # A brief tagline for your site
+sidebar_image: /images/logo-black.png
 
 # Build settings
 markdown: redcarpet
 highlighter: pygments
-baseurl: /strange_case # the subpath of your site, e.g. /blog/
