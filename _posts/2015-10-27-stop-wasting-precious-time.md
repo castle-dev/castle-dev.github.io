@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Stop Waisting Precious Time"
+title:  "Stop Wasting Precious Time"
 author: Scott Lowe
 date:   2015-10-27 14:03:00
 categories: tutorial
