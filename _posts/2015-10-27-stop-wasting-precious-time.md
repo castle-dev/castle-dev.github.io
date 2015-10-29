@@ -42,7 +42,7 @@ To do this, create a new item from the Jenkins sidebar. Select **Freestyle proje
 Here's an example deploy process from our web app:
 {% highlight bash %}
 ssh [user]@[host] <<EOF
-  cd [project folder] && git checkout master && git pull && && gulp build:dist && cp -r build/dist/* /var/www/public/ && exit
+  cd [project folder] && git checkout master && git pull && gulp build:dist && cp -r build/dist/* /var/www/public/ && exit
 EOF
 {% endhighlight %}
 
