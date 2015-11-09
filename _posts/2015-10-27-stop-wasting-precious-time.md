@@ -16,7 +16,7 @@ We're big fans of CI because it allows us to move faster with more confidence. G
 In this post, we'll walk through Castle's current CI setup in hopes that this will help others join the club. Be warned, non-nerds, it's gonna get technical.
 
 ## our current setup
-Castle runs [Jenkins][robot] on a $10 / month [Digital Ocean][servers] droplet. I like Ubuntu, so if you pick another flavor of linux then I can't guarantee that the commands in this post will work (also, be sure to install `git` and any other dependencies your project has). Once you've got Jenkins up and running, you'll need to create a new account on GitHub specifically for Jenkins to have access to your repos. After creating the GitHub account, ssh into your new droplet and run `sudo su jenkins` to switch to the jenkins user, then [generate new ssh keys and add them to your new GitHub account][add-ssh-keys]. Give that user access to your repo (read & write). Finally, use the browser to login to Jenkins, click **Manage Jenkins** in the left sidebar, click **Manage Plugins**, then install both the **Git plugin** and the **GitHub plugin**.
+Castle runs [Jenkins][robot] on a $10 / month [Digital Ocean][servers] droplet. I like Ubuntu, so if you pick another flavor of linux then I can't guarantee that the commands in this post will work (also, be sure to install **git** and any other dependencies your project has). Once you've got Jenkins up and running, you'll need to create a new account on GitHub specifically for Jenkins to have access to your repos. After creating the GitHub account, ssh into your new droplet and run `sudo su jenkins` to switch to the jenkins user, then [generate new ssh keys and add them to your new GitHub account][add-ssh-keys]. Give that user access to your repo (read & write). Finally, use the browser to login to Jenkins, click **Manage Jenkins** in the left sidebar, click **Manage Plugins**, then install both the **Git plugin** and the **GitHub plugin**.
 
 Now you're ready to configure your Jenkins jobs. We maintain 3 jobs for each repo:
 
@@ -65,7 +65,7 @@ Create a new job (or copy the deploy job) and configure it like so:
 - Source Code Management: **Git**
 - Repository URL: [your repo's ssh remote]
 - Credentials: **Add** > **SSH Username with private key** > **From the Jenkins master ~/.ssh** or use the identity you created for the deploy job
-- Refspec(found under the **Advanced** button between **Credentials** and **Branches to build**): `+refs/pull/*/head:refs/remotes/origin/pr/merge/* +refs/heads/develop:refs/remotes/origin/develop` 
+- Refspec (found under the **Advanced** button between **Credentials** and **Branches to build**): `+refs/pull/*/head:refs/remotes/origin/pr/merge/* +refs/heads/develop:refs/remotes/origin/develop` 
 - Branches to build: `**`
 - Build Triggers: **Build when a change is pushed to GitHub**
 - Build: **Add build step** > **Execute shell** > paste in your bump process

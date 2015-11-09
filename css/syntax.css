@@ -61,15 +61,27 @@
 
 code  {
   background: #A3E1DE;
-  font-family:Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New !important;
+  font-family: Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New !important;
   padding: 2px 5px !important;
-  margin: 0px 2px !important;
+  max-width: 100%;
+  overflow: auto;
+  display: inline-block;
+  margin: -10px 1px !important;
+  white-space: nowrap;
+  position: relative;
+  bottom: 0px;
 }
 
 .highlight code {
- background-color: #fcfdfd;
- padding: 0px !important;
- margin: 0px !important;
+  background-color: #fcfdfd;
+  padding: 0px 10px !important;
+  margin: 0px !important;
+}
+
+pre code {
+  display: block;
+  position: static;
+  white-space: pre;
 }
 
 strong {
